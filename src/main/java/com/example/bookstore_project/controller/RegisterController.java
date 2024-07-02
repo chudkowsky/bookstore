@@ -15,8 +15,6 @@ public class RegisterController {
 
     @Autowired
     private UserService userService;
-    private BookService bookService;
-
 
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {

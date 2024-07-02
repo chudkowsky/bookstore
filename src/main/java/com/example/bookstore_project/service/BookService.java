@@ -2,9 +2,6 @@ package com.example.bookstore_project.service;
 
 import com.example.bookstore_project.model.Book;
 import com.example.bookstore_project.repository.IBookDAO;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.NoResultException;
-import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

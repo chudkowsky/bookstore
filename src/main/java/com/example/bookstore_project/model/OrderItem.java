@@ -2,9 +2,6 @@ package com.example.bookstore_project.model;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Table(name = "order_items")
 public class OrderItem {

@@ -57,6 +57,12 @@
         button:hover {
             background-color: #0056b3;
         }
+        .action-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -93,9 +99,14 @@
             </tr>
             </tbody>
         </table>
-        <form th:action="@{/order/submit}" method="post">
-            <button type="submit">Submit Order</button>
-        </form>
+        <div class="action-buttons">
+            <form th:action="@{/order/submit}" method="post">
+                <button type="submit">Submit Order</button>
+            </form>
+            <a th:href="@{/home}">
+                <button type="button">Go Back to Home</button>
+            </a>
+        </div>
     </div>
 </div>
 </body>
