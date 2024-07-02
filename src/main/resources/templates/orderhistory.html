@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .order-history {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        .order-history h2 {
+            margin-top: 0;
+        }
+        .order-history ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .order-history li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>Your Order History</h1>
+<div th:each="order : ${orderHistory}" class="order-history">
+    <h2>Order ID: <span th:text="${order.id}"></span></h2>
+    <p>Date: <span th:text="${#dates.format(order.date, 'dd-MM-yyyy')}"></span></p>
+    <p>Status: <span th:text="${order.status}"></span></p>
+    <h3>Ordered Items:</h3>
+    <ul>
+        <li th:each="item : ${order.items}">
+            Book Title: <span th:text="${item.book.title}"></span>,
+            Quantity: <span th:text="${item.quantity}"></span>
+        </li>
+    </ul>
+</div>
+<a href="/home">
+    <button>Back to Home</button>
+</a>
+</body>
+</html>
